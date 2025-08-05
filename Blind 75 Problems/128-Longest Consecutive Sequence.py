@@ -1,5 +1,6 @@
 # Leetcode Problem: 128: Longest Consecutive Sequence Description
 # https://leetcode.com/problems/longest-consecutive-sequence/description/
+from typing import List
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         # If the nums list is empty, we return the longest consecutive elements sequence as 0
