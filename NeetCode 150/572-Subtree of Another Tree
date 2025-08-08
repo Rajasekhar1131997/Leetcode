@@ -1,0 +1,42 @@
+# Leetcode Problem 572: Subtree of Another Tree
+# https://leetcode.com/problems/subtree-of-another-tree/
+
+# Definition for a binary tree node.
+from typing import Optional
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        # A Tree can be a subtree of itself
+        # if the subtree is empty, we return True
+        if not subRoot:
+            return True
+        # if the main tree is empty, we return False
+        if not root:
+            return False
+        # Checking if the subtree is a part of main tree
+        if self.sameTree(root, subRoot):
+            return True
+        # Traverse and see if the left child or right child is a part/start of subtree
+        return (self.isSubtree(root.left, subRoot) or
+                self.isSubtree(root.right, subRoot))
+
+    # helper function to compare both tree and subtrees
+    def sameTree(self, root, subRoot):
+        # if both trees are empty, we return True
+        if not root and not subRoot:
+            return True
+        # if either of the trees are empty, we return False
+        if not root or not subRoot:
+            return False
+        # if both tree and subtree and their root values are equal
+        if root and subRoot and root.val == subRoot.val:
+            # we traverse and check the left and right subtrees.
+            return (self.sameTree(root.left, subRoot.left) and
+                    self.sameTree(root.right, subRoot.right))
+
+print("Time Complexity: O(M * N)")
+print("Space Complexity: O(N), in the worst case")
