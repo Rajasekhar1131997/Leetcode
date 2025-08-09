@@ -1,5 +1,6 @@
 # Leetcode Problem 2460: Apply Operations to an Array
 # https://leetcode.com/problems/apply-operations-to-an-array/description/
+from typing import List
 class Solution:
     def applyOperations(self, nums: List[int]) -> List[int]:
         # Initialize two pointers for adjacent element comparison
