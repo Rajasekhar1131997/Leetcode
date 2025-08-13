@@ -2,11 +2,12 @@
 # https://leetcode.com/problems/balanced-binary-tree/
 
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+from typing import Optional
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         # using helper function to depth first search the bottom-up approach
