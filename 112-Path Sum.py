@@ -21,5 +21,6 @@ class Solution:
         # we traverse through the left and right subtree at each node while keeping track of remaining sum
         return self.hasPathSum(root.left, rem) or self.hasPathSum(root.right, rem)
 
+
 print("Time Complexity: O(N)")
 print("Space Complexity: O(H), where H is the height of the tree, O(N) in worst case")
